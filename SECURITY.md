@@ -8,7 +8,7 @@ En CryptoCode, la seguridad de tus datos y fondos es nuestra prioridad. Este doc
 
 Si descubres una vulnerabilidad de seguridad en la plataforma (incluyendo el sitio web, API, base de datos o infraestructura), **no la divulgues públicamente**. Por favor, envíanos un reporte a:
 
-📧 **security@cryptocode.ai** (con asunto `[VULN]`).
+📧 **contact@cryptocode-jw.com** (con asunto `[VULN]`).
 
 Incluye en tu reporte:
 - Descripción clara del problema.
