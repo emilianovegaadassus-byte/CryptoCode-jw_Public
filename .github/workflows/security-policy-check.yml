@@ -1,0 +1,32 @@
+name: Security Policy Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Verify required security files exist
+        run: |
+          if [ ! -f SECURITY.md ]; then
+            echo "❌ SECURITY.md is missing"
+            exit 1
+          fi
+          if [ ! -f CODE_OF_CONDUCT.md ]; then
+            echo "❌ CODE_OF_CONDUCT.md is missing"
+            exit 1
+          fi
+          echo "✅ All security files present"
+      
+      - name: Check for exposed credentials
+        run: |
+          if grep -r "API_KEY\|SECRET\|PASSWORD" --include="*.md" .; then
+            echo "⚠️ Possible credentials found in markdown files"
+            exit 1
+          fi
